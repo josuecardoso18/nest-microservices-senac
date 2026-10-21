@@ -1,15 +1,14 @@
-// Schema de referência para a etapa PostgreSQL + Prisma do tutorial.
-// Antes de usar: configure DATABASE_URL no arquivo .env e instale Prisma.
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "mysql"
   url      = env("DATABASE_URL")
 }
 
 model User {
-  id    Int    @id @default(autoincrement())
-  name  String
+  id   Int    @id @default(autoincrement())
+  name String
 }
